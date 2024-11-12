@@ -8,6 +8,7 @@ import {
   Landmark,
   GraduationCap,
 } from 'lucide-react';
+import FloatingShapes from './FloatingShapes';
 
 const industries = [
   {
@@ -91,8 +92,9 @@ const testimonials = [
 
 const Industries = () => {
   return (
-    <section id="industries" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
+    <section id="industries" className="relative py-20">
+      <FloatingShapes className="absolute inset-0" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -115,7 +117,7 @@ const Industries = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg"
+              className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg"
             >
               <div className="w-16 h-16 bg-primary/10 dark:bg-secondary/10 rounded-full flex items-center justify-center mb-6">
                 <div className="text-primary dark:text-secondary">{industry.icon}</div>
@@ -159,7 +161,7 @@ const Industries = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-xl shadow-lg"
+                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg"
               >
                 <div className="text-4xl text-primary dark:text-secondary mb-6">"</div>
                 <p className="text-gray-600 dark:text-gray-300 mb-6 italic">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Award, Heart, BookOpen, Shield, Cloud } from 'lucide-react';
+import FloatingShapes from './FloatingShapes';
 
 const teamMembers = [
   {
@@ -43,9 +44,9 @@ const certifications = [
 
 const AboutUs = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        {/* Mission & Vision */}
+    <section id="about" className="relative py-20">
+      <FloatingShapes className="absolute inset-0" />
+      <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -60,7 +61,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-xl shadow-lg"
+              className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg"
             >
               <div className="w-16 h-16 bg-primary/10 dark:bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="text-primary dark:text-secondary" size={32} />
@@ -77,7 +78,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-xl shadow-lg"
+              className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg"
             >
               <div className="w-16 h-16 bg-primary/10 dark:bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="text-primary dark:text-secondary" size={32} />
@@ -110,7 +111,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center"
+                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center"
               >
                 <img
                   src={member.image}
@@ -145,7 +146,7 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center"
+                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg text-center"
               >
                 <div className="w-16 h-16 bg-primary/10 dark:bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <div className="text-primary dark:text-secondary">{cert.icon}</div>
@@ -169,7 +170,7 @@ const AboutUs = () => {
           <h3 className="text-3xl font-bold text-primary dark:text-white mb-8">
             Corporate Social Responsibility
           </h3>
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+          <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl shadow-lg">
             <div className="w-16 h-16 bg-primary/10 dark:bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <Heart className="text-primary dark:text-secondary" size={32} />
             </div>

@@ -17,6 +17,7 @@ import ParticlesBackground from './components/ParticlesBackground';
 import ScrollProgress from './components/ScrollProgress';
 import LoadingSpinner from './components/LoadingSpinner';
 import Chatbot from './components/Chatbot';
+import FloatingShapes from './components/FloatingShapes';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -67,6 +68,8 @@ function App() {
       <div className="fixed inset-0 z-0">
         <ParticlesBackground />
       </div>
+
+      <FloatingShapes className="fixed inset-0 z-0" />
       
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       
